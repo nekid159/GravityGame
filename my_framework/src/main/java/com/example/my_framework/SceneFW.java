@@ -8,6 +8,9 @@ public abstract class SceneFW {
 
     public SceneFW(CoreFW coreFW) {
         this.coreFW = coreFW;
+        sceneWidth = coreFW.getGraphicsFW().getWidthFrameBuffer();
+        sceneHeight = coreFW.getGraphicsFW().getHeightFrameBuffer();
+        graphicsFW = coreFW.getGraphicsFW();
 
     }
 

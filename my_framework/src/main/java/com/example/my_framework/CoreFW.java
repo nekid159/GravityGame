@@ -44,6 +44,8 @@ public class CoreFW extends AppCompatActivity {
         loopFW = new LoopFW(this, frameBuffer);
         graphicsFW = new GraphicsFW(getAssets(), frameBuffer);
 
+        sceneFW = getStartScene();
+
         stateOnPause=false;
         stateOnResume=false;
         setContentView(loopFW);
