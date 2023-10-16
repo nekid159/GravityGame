@@ -17,6 +17,7 @@ public class CoreFW extends AppCompatActivity {
 
     private LoopFW loopFW;
     private GraphicsFW graphicsFW;
+    private TouchListenerFW touchListenerFW;
 
     private Display display;
     private Point sizeDisplay;
@@ -43,6 +44,8 @@ public class CoreFW extends AppCompatActivity {
 
         loopFW = new LoopFW(this, frameBuffer);
         graphicsFW = new GraphicsFW(getAssets(), frameBuffer);
+        touchListenerFW = new TouchListenerFW(loopFW, sceneWidth, sceneHeight);
+
 
         sceneFW = getStartScene();
 
@@ -75,8 +78,11 @@ public class CoreFW extends AppCompatActivity {
     public GraphicsFW getGraphicsFW(){
         return graphicsFW;
     }
+    public TouchListenerFW getTouchListenerFW(){
+        return touchListenerFW;
+    }
     public void setScene(SceneFW sceneFW){
-        if (sceneFW!=null){
+        if (sceneFW==null){
             throw new IllegalArgumentException("Невозможно загрузить сцену");
         }
         this.sceneFW.pause();
